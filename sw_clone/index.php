@@ -4,7 +4,7 @@
         <title>HiveTasks (beta)</title>
         <meta charset="UTF-8">
         <meta name="description" content="Welcome to HiveTasks - Your favorite Tool for the Hive Blockchain.">
-        <meta name="keywords" content="steem,tool,dashboard,statistics,blockchain">
+        <meta name="keywords" content="hive,tool,dashboard,statistics,blockchain">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
         <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96">
