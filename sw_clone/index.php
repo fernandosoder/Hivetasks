@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php /*
+  if(isset($_GET['account'])){
+  if($_GET['account'] == "themarkymark" || $_GET['account'] == "btcvenom"){
+  header("Location: https://www.google.com/search?q=douchebag" );
+  exit();
+  }}
+  if(isset($_GET['login'])){
+  if($_GET['login'] == "themarkymark" ||$_GET['login'] == "btcvenom"){
+  header("Location: https://www.google.com/search?q=douchebag" );
+  exit();
+  }} */
+?><!DOCTYPE html>
 <html lang="EN">
     <head data-version="65">
         <title>HiveTasks (beta)</title>

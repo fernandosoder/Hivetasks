@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'OpenSans';
+	src: local('OpenSansRegular'),
+		 url('/res/fonts/OpenSansRegular.woff') format('woff'),
+		 url('/res/fonts/OpenSansRegular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('/res/fonts/BebasNeueRegular.woff') format('woff'),
+         url('/res/fonts/BebasNeueRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
