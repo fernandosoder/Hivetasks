@@ -1,0 +1,10 @@
+Options -Indexes
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+    RewriteRule ^\/?\@([^\/]+)$ ./index.php?account=$1
+    RewriteRule ^\/?(authentication|sps-proposals|key-generator|seed-nodes-check|manual-vote|witnesses|abuse-finder|witness-schedule|copy-votes|block-explorer|delegation-history|transfer-search|account-creator|account-authorities|account-recovery|proxy-info|change-password)(.*)$ ./index.php?data-module=$1$2
+    RewriteRule ^\/?(block)\/([0-9]+)\/?([0-9a-zA-Z]+)\??(.*)$ ./index.php?data-module=block-explorer&block_num=$2&trx_id=$3&trx_index=&virtual_op=&$4
+</IfModule>
