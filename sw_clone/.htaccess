@@ -1,4 +1,5 @@
 Options -Indexes
+Redirect 302 /support https://github.com/fernandosoder/Hivetasks/issues
 <IfModule mod_rewrite.c>
     Options +FollowSymLinks
     RewriteEngine On
