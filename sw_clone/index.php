@@ -14,7 +14,16 @@
         <link type="text/css" rel="stylesheet" href="/res/css/main.min.css?v=2260">
         <link type="text/css" rel="stylesheet" href="/res/css/themes/theme-default.min.css?v=2260" id="themeFile">
         <script src="/res/js/sw.libs.min.js"></script>
-        <script src="/res/js/sw.out.min.js?v=2260"></script> 
+<!--        <script src="/res/js/sw.out.min.js?v=2260"></script> -->
+        <script src="/res/js/first.js"></script>
+        <script src="/res/js/second.js"></script>
+        <script src="/res/js/third.js"></script>
+        <script src="/res/js/forth.js"></script>
+        <script src="/res/js/fifth.js"></script>
+        <script src="/res/js/sixth.js"></script>
+        <script src="/res/js/seventh.js"></script>
+        <script src="/res/js/eighth.js"></script>
+        <script src="/res/js/nineth.js"></script>
         <script type="text/javascript">
 
         </script>
