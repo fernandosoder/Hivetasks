@@ -2483,8 +2483,8 @@ Wk.prototype.AF = function (a, b) {
             function (b) {
                 var c = D.o.U3;
                 c.X0(b.pending_rewarded_vesting_shares);
-                c.Xy(b.pending_rewarded_vesting_steem);
-                c.Ui(b.total_vesting_fund_steem);
+                c.Xy(b.pending_rewarded_vesting_hive);
+                c.Ui(b.total_vesting_fund_hive);
                 c.Uj(b.total_vesting_shares);
                 c.Ux();
                 D.V.Gz != b.last_irreversible_block_num && (D.V.G2 = moment());
@@ -2493,15 +2493,15 @@ Wk.prototype.AF = function (a, b) {
                 D.V.OW = moment.utc(b.time).local();
                 D.V.Gx = b.maximum_block_size;
                 D.V.G4 = AQ(b.current_supply);
-                D.V.G5 = AQ(b.current_sbd_supply);
+                D.V.G5 = AQ(b.current_hbd_supply);
                 D.V.G6 = AQ(b.virtual_supply);
-                D.V.Tp = b.sbd_interest_rate;
+                D.V.Tp = b.hbd_interest_rate;
                 D.V.Tw = b.delegation_return_period;
                 D.V.Tx = b.reverse_auction_seconds;
                 D.V.Ty = b.current_witness;
-                D.V.kv = b.sbd_print_rate / 100;
-                D.V.kw = b.sbd_start_percent / 100;
-                D.V.kx = b.sbd_stop_percent / 100;
+                D.V.kv = b.hbd_print_rate / 100;
+                D.V.kw = b.hbd_start_percent / 100;
+                D.V.kx = b.hbd_stop_percent / 100;
                 a();
             },
             b
