@@ -1,0 +1,43 @@
+# Apache configuration file (see httpd.apache.org/docs/2.2/mod/quickreference.html)
+
+# disable directory listing
+Options -Indexes
+
+#Header set Content-Type: "text/plain"
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+    
+RewriteRule ^\/?version\/?$ ./version
+    RewriteRule ^\/?\@([^\/]+)$ ./index.php?account=$1
+    RewriteRule ^\/?(account-watch|authentication|sps-proposals|key-generator|seed-nodes-check|manual-vote|witnesses|abuse-finder|witness-schedule|copy-votes|block-explorer|delegation-history|transfer-search|account-creator|account-authorities|account-recovery|proxy-info|change-password)(.*)$ ./index.php?data-module=$1$2
+    RewriteRule ^\/?(block)\/([0-9]+)\/?([0-9a-zA-Z]+)\??(.*)$ ./index.php?data-module=block-explorer&block_num=$2&trx_id=$3&trx_index=&virtual_op=&$4
+    RewriteRule ^\/?(pr)$       ./pr.php?pr=true
+    RewriteRule ^\/?(promo)$    ./pr.php?promo=true
+    RewriteRule ^\/?(signer)$   ./signer.php
+    RewriteRule ^\/?(version)\/?$   ./version.php
+	
+	
+
+
+</IfModule>
+
+Redirect 302 /support https://github.com/fernandosoder/Hivetasks/issues
+
+<ifModule mod_headers.c>
+
+#    Header add Link "<style.css>;rel=preload"
+#    Header add Link "<script.js>;rel=preload"
+#    Header add Link "<favicon.ico>;rel=preload"
+    #Header add Link "</xxx.js>;rel=preload"
+    #Header add Link "</favicon.ico>;rel=preload"
+    #Header add Link "</test.webp>;rel=preload"
+#    H2PushResource favicon.ico
+#    H2PushResource style.css
+#    H2PushResource script.js
+
+</ifModule>
