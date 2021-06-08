@@ -1,15 +1,4 @@
-<?php /*
-  if(isset($_GET['account'])){
-  if($_GET['account'] == "themarkymark" || $_GET['account'] == "btcvenom"){
-  header("Location: https://www.google.com/search?q=douchebag" );
-  exit();
-  }}
-  if(isset($_GET['login'])){
-  if($_GET['login'] == "themarkymark" ||$_GET['login'] == "btcvenom"){
-  header("Location: https://www.google.com/search?q=douchebag" );
-  exit();
-  }} */
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="EN">
     <head data-version="<?php echo file_get_contents("version.php") ;?>">
         <title>HiveTasks</title>
