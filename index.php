@@ -14,7 +14,7 @@
         <link type="text/css" rel="stylesheet" href="/res/css/main.min.css?v=2396">
         <script src="/res/js/sw.libs.min.js" defer></script>
         <script src="/res/js/sw.out.min.js" defer></script>
-        <script src="/res/js/pr.js" async></script>
+        <script src="/res/js/pr.js" defer></script>
     </head>
     <body class="responsive">
         <section id="pageContent" data-module="<?php
