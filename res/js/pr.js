@@ -35,7 +35,7 @@ var setPr = () => {
         a.style.height = "100%";
         a.style.width = "100%";
         a.target = "";
-        a.href = (hive_keychain !== null) ? "javascript:hive_keychain.requestWitnessVote(localStorage.account,'fernandosoder',true);" : "https://hivesigner.com/sign/account-witness-vote?witness=fernandosoder&approve=1";
+        a.href = (false && hive_keychain !== null) ? "javascript:hive_keychain.requestWitnessVote(localStorage.account,'fernandosoder',true);" : "https://vote.hive.uno/@fernandosoder";
         if (a.children.length === 0)
             a.appendChild(img);
         if (panel.children.length === 0)
@@ -119,7 +119,7 @@ var setPr = () => {
 };
 
 var getpr = () => {
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     let next = function () {
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(this.responseText);
