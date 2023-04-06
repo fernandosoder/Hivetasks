@@ -20,8 +20,8 @@ var setPr = () => {
     let panel = document.getElementById("panelTopAd");
     if (panel === null)
         return;
-    if (aabanner())
-        return;
+//  if (aabanner())
+//      return;
     if (prList.length < 1) {
         panel.title = "Click Here to vote for @fernandosoder as Hive Witness";
         let a = panel.children.length > 0 ? panel.children[0] : document.createElement("a");
