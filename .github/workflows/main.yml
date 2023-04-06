@@ -1,0 +1,11 @@
+name: Build & Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  clone:
+    name: Pull
+    runs-on: self-hosted
+    steps:
+      - run: cd ~/hivetasks ; git stash ; git pull origin
