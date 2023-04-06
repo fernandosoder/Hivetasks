@@ -1,0 +1,15 @@
+{
+    "code": 0,
+    "result":
+            {
+                "cols": {
+                    "time": 0,
+                    "from": 1,
+                    "to": 2,
+                    "vests": 3
+                },
+                "rows": [
+                    [1635198626, "user1", "fernandosoder", 412113.874601],
+                    [1635192626, "user2", "fernandosoder", 76336.407426]]
+            }
+}

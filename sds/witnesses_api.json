@@ -1,0 +1,40 @@
+{
+    "code": 0,
+    "result": {
+        "cols": {
+            "owner": 0,
+            "last_hbd_exchange_update": 1,
+            "votes": 2,
+            "produced": 3,
+            "total_missed": 4,
+            "running_version": 5,
+            "signing_key": 6,
+            "url": 7,
+            "props": 8,
+            "hbd_exchange_rate": 9
+        },
+        "rows": [
+            [
+                "fernandosoder",
+                1584795897000,
+                185303764340544860,
+                1141466,
+                227,
+                "1.25.1",
+                "STM1111111111111111111111111111111114T1Anm",
+                "https://hivetasks.com",
+                {
+                    "account_creation_fee": "3.000 HIVE",
+                    "maximum_block_size": 65536,
+                    "hbd_interest_rate": 2000,
+                    "account_subsidy_budget": 797,
+                    "account_subsidy_decay": 347321
+                },
+                {
+                    "base": "0.49 HBD",
+                    "quote": "0.990 HIVE"
+                }
+            ]
+        ]
+    }
+}

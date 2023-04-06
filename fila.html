@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/2.4.0/bignumber.min.js"></script>
+        <script src="./fila.js" type="text/javascript" defer></script>
+        <style type="text/css">
+            *{
+                transition: linear 5s;
+            }
+            body{
+                display: grid;
+                grid-gap: 10px;
+            }
+            body > div{
+                display: grid;
+                grid-template-areas: "name sched";
+                grid-template-columns: 1fr min-content;
+            }
+            body > div > div{
+                /*! display: inline-flex; */
+            }
+            body > div > div:last-child{
+                float: right;
+                font-family: monospace;
+                grid-area: sched;
+            }
+            body > div > div:first-child{
+                text-align: left;
+                font-family: monospace;
+                grid-area: name;
+            }
+            .top20{
+                background-color:#0080004f;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+</html>
