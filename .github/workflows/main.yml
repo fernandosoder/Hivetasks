@@ -8,4 +8,4 @@ jobs:
     name: Pull
     runs-on: self-hosted
     steps:
-      - run: cd ~/hivetasks ; git stash ; git pull origin
+      - run: cd ~/hivetasks ; git stash ; git pull origin master
