@@ -118,20 +118,80 @@ var setPr = () => {
     });
 };
 
-var getpr = () => {
+var  getpr = () => {
     let xhttp = new XMLHttpRequest();
+   	let arr = [];
+   	let validAdds = [];
+    let start = 0;
+   	let postData = {
+      "id":1,
+     	"jsonrpc":"2.0",
+     	"method":"condenser_api.get_account_history",
+     	"params":[
+      	"fernandosoder",
+       	-1,
+       	1000,
+       	4,
+        4
+      ]};
     let next = function () {
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(this.responseText);
-            prList = res;
+          	let stop = false;
+            res.result.forEach((item) =>{
+                if(item[1].op[0] === "transfer")
+                  if(item[1].op[1].to === "fernandosoder"){
+                    let transac = item[1].op[1];
+                    transac.timestamp = item[1].timestamp;
+                let d = new Date(transac.timestamp);
+                let now = new Date();
+                    let inc = now.valueOf() - d.valueOf() - 0604800000 > 0;
+                    if(!inc)
+                    	arr.push(transac);
+                    stop = stop || inc;
+                  }
+            });
+          	if(!stop){
+              console.log(postData.params);
+              start += 1000;
+              postData.params[1] = start;
+              console.log(postData.params);
+              xhttp.open("POST", "https://" + localStorage["cfg.hive_node"], true);
+              xhttp.send(JSON.stringify(postData));
+              return;
+            }
+           	console.table(arr);
+          	console.log(stop);
+          	arr.forEach((item)=>{
+              try{
+                let jsondata = JSON.parse(item.memo);
+                console.log(jsondata);
+                if(jsondata.id !== "ht_add")
+                 	throw new Error('not a Hivetasks Add');
+                let _expire;
+                let d = new Date(item.timestamp + ".000Z");
+                _expire = d.valueOf() + item.amount.split(" ")[0] * 6e7;
+                let add = {
+                  author: 	jsondata.author,
+                  permlink:	jsondata.permlink,
+                  image:		jsondata.image,
+                  expire:		_expire	
+                };
+                validAdds.push(add);
+               	console.log(add);
+              }catch(e){
+//                  console.log(e);
+              }
+            });
+            prList =     validAdds;        
             return;
         }
         return;
     };
     xhttp.onreadystatechange = next;
     //xhttp.onerror = next;
-    xhttp.open("GET", "/pr", true);
-    xhttp.send();
+    xhttp.open("POST", "https://" + localStorage["cfg.hive_node"], true);
+    xhttp.send(JSON.stringify(postData));
 };
 
 setTimeout(getpr, 1000);
