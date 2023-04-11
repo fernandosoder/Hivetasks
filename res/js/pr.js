@@ -138,19 +138,24 @@ var  getpr = () => {
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(this.responseText);
           	let stop = false;
-            res.result.forEach((item) =>{
-                if(item[1].op[0] === "transfer")
-                  if(item[1].op[1].to === "fernandosoder"){
-                    let transac = item[1].op[1];
-                    transac.timestamp = item[1].timestamp;
-                let d = new Date(transac.timestamp);
-                let now = new Date();
-                    let inc = now.valueOf() - d.valueOf() - 0604800000 > 0;
-                    if(!inc)
-                    	arr.push(transac);
-                    stop = stop || inc;
-                  }
-            });
+            try{
+                res.result.forEach((item) =>{
+                    if(item[1].op[0] === "transfer")
+                      if(item[1].op[1].to === "fernandosoder"){
+                        let transac = item[1].op[1];
+                        transac.timestamp = item[1].timestamp;
+                    let d = new Date(transac.timestamp);
+                    let now = new Date();
+                        let inc = now.valueOf() - d.valueOf() - 0604800000 > 0;
+                        if(!inc)
+                            arr.push(transac);
+                        stop = stop || inc;
+                      }
+                });
+            }catch(e){
+                setTimeout(getpr, 1000);
+                return;
+            }
           	if(!stop){
               console.log(postData.params);
               start += 1000;
