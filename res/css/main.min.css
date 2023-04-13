@@ -2254,7 +2254,9 @@ output{
     font-style: italic;
     color: #aaa;
 }
-
+#panelTopAd progress{
+    display: none;
+}
 #panelTopAd *{
     transition:.5s ease-in-out;
     transform:scale(1);

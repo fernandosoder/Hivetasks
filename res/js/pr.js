@@ -73,6 +73,7 @@ var setPr = () => {
             let res = JSON.parse(jqXHR.responseText);
             let panel = document.getElementById("panelTopAd");
             let a = panel.children.length > 0 ? panel.children[0] : document.createElement("a");
+            let progress = panel.children.length > 0 ? panel.children[1] : document.createElement("progress");
             a.innerHTML = "";
             let img = document.createElement("img");
             img.addEventListener("error", (e) => {
@@ -97,6 +98,7 @@ var setPr = () => {
             container.appendChild(author);
             a.appendChild(container);
             panel.appendChild(a);
+            panel.appendChild(progress);
 
             if (res.result.json_metadata.app.split("/")[0] === "dBuzz") {
                 let arr = res.result.body.split("\n");
