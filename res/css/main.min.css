@@ -2049,6 +2049,7 @@ input.unitBox {
     left: 0;
     opacity: 0.5;
     width: var(--adlink_progress);
+    max-width: 100%;
 }
 .adMediumRect[data-type='text'] .adLink {
     height:240px
