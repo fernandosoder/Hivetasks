@@ -202,11 +202,11 @@ var getpr = () => {
     xhttp.send(JSON.stringify(postData));
 };
 
-setTimeout(getpr, 1000);
 setTimeout(setPr, 1000);
 setTimeout(setPr, 2000);
 setTimeout(setPr, 3000);
 setTimeout(setPr, 4000);
+setTimeout(getpr, 5000);
 
 setInterval(getpr, 600000);
 setInterval(setPr, 40000);
