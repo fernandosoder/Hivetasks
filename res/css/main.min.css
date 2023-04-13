@@ -2033,6 +2033,21 @@ input.unitBox {
     color:#fafafa;
     position: relative;
 }
+.adLink:hover:after{
+    opacity: 0;
+    transition:.1s ease-in-out;
+}
+.adLink:after{
+    transition:1s ease-in-out;
+    content: "";
+    height: 2px;
+    background-color: red;
+    display: inline-block;
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    opacity: 0.2;
+}
 .adMediumRect[data-type='text'] .adLink {
     height:240px
 }
