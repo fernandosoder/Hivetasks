@@ -40,6 +40,13 @@ var setPr = () => {
             a.appendChild(img);
         if (panel.children.length === 0)
             panel.appendChild(a);
+        let tryAgain = () =>{
+            if (prList.length > 0)
+                setPr();
+            else
+                setTimeout(tryAgain,1000);
+        };
+        setTimeout(tryAgain,1000);
         return;
     }
     if (panel === null) {
@@ -204,7 +211,7 @@ var getpr = () => {
 };
 
 setTimeout(getpr, 2000);
-setTimeout(setPr, 4000);
+setTimeout(setPr, 2000);
 setTimeout(getpr, 5000);
 
 setInterval(getpr, 600000);
