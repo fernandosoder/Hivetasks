@@ -227,5 +227,4 @@ setTimeout(setPr, 2000);
 setTimeout(getpr, 5000);
 
 setInterval(getpr, 600000);
-setInterval(setPr, 40000);
 
