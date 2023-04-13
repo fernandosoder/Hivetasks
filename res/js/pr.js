@@ -131,9 +131,9 @@ var setPr = () => {
                     setTimeout(progressbar,500);
                     return;
                 }
-                setTimeout(progressbar,500);
+                setTimeout(setPr,500);
             }
-            setTimeout(setPr,500);
+            setTimeout(progressbar,500);
         }
     });
 };
