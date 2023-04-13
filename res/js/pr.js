@@ -118,7 +118,7 @@ var setPr = () => {
     });
 };
 
-var  getpr = () => {
+var getpr = () => {
     let xhttp = new XMLHttpRequest();
    	let arr = [];
    	let validAdds = [];
@@ -138,24 +138,19 @@ var  getpr = () => {
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(this.responseText);
           	let stop = false;
-            try{
-                res.result.forEach((item) =>{
-                    if(item[1].op[0] === "transfer")
-                      if(item[1].op[1].to === "fernandosoder"){
-                        let transac = item[1].op[1];
-                        transac.timestamp = item[1].timestamp;
-                    let d = new Date(transac.timestamp);
-                    let now = new Date();
-                        let inc = now.valueOf() - d.valueOf() - 0604800000 > 0;
-                        if(!inc)
-                            arr.push(transac);
-                        stop = stop || inc;
-                      }
-                });
-            }catch(e){
-                setTimeout(getpr, 1000);
-                return;
-            }
+            res.result.forEach((item) =>{
+                if(item[1].op[0] === "transfer")
+                  if(item[1].op[1].to === "fernandosoder"){
+                    let transac = item[1].op[1];
+                    transac.timestamp = item[1].timestamp;
+                let d = new Date(transac.timestamp);
+                let now = new Date();
+                    let inc = now.valueOf() - d.valueOf() - 0604800000 > 0;
+                    if(!inc)
+                    	arr.push(transac);
+                    stop = stop || inc;
+                  }
+            });
           	if(!stop){
               console.log(postData.params);
               start += 1000;
@@ -174,8 +169,11 @@ var  getpr = () => {
                 if(jsondata.id !== "ht_add")
                  	throw new Error('not a Hivetasks Add');
                 let _expire;
+                let now = new Date();
                 let d = new Date(item.timestamp + ".000Z");
                 _expire = d.valueOf() + item.amount.split(" ")[0] * 6e7;
+                if (now.valueOf() > _expire)
+                  throw new Error('Expired add');
                 let add = {
                   author: 	jsondata.author,
                   permlink:	jsondata.permlink,
@@ -183,12 +181,12 @@ var  getpr = () => {
                   expire:		_expire	
                 };
                 validAdds.push(add);
-               	console.log(add);
               }catch(e){
 //                  console.log(e);
               }
             });
             prList =     validAdds;        
+                    	console.table(prList);
             return;
         }
         return;
