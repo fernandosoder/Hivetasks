@@ -125,7 +125,7 @@ var setPr = () => {
             document.querySelector(":root").style.setProperty("--adlink_progress","0%");
             let progressbar = () =>{
                 let pcnt = Number((document.querySelector(":root").style.getPropertyValue("--adlink_progress")).slice(0, -1));
-                pcnt += 2;
+                pcnt += 3;
                 document.querySelector(":root").style.setProperty("--adlink_progress",pcnt+"%");
                 if(pcnt < 100){
                     setTimeout(progressbar,900);
@@ -174,7 +174,7 @@ var getpr = () => {
                     }
                 });
             }catch(e){
-                setTimeout(getpr, 2000);
+                return;
             }
           	if(!stop){
               console.log(postData.params);
@@ -222,9 +222,10 @@ var getpr = () => {
     xhttp.send(JSON.stringify(postData));
 };
 
-
+setTimeout(getpr, 2000);
 setTimeout(setPr, 2000);
-setTimeout(getpr, 4000);
+setTimeout(getpr, 5000);
 
 setInterval(getpr, 600000);
+
 
