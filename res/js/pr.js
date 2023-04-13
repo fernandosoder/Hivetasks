@@ -174,7 +174,7 @@ var getpr = () => {
                     }
                 });
             }catch(e){
-                return;
+                setTimeout(getpr, 2000);
             }
           	if(!stop){
               console.log(postData.params);
@@ -222,9 +222,9 @@ var getpr = () => {
     xhttp.send(JSON.stringify(postData));
 };
 
-setTimeout(getpr, 2000);
+
 setTimeout(setPr, 2000);
-setTimeout(getpr, 5000);
+setTimeout(getpr, 1000);
 
 setInterval(getpr, 600000);
 

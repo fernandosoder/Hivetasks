@@ -2036,7 +2036,7 @@ input.unitBox {
 }
 .adLink:hover:after{
     opacity: 0;
-    transition:.1s ease-in-out;
+    transition:.9s linear;
 }
 .adLink:after{
     transition:1s ease-in-out;
@@ -2047,7 +2047,7 @@ input.unitBox {
     position: absolute;
     top: calc(100% - 2px);
     left: 0;
-    opacity: 0.2;
+    opacity: 0.5;
     width: var(--adlink_progress);
 }
 .adMediumRect[data-type='text'] .adLink {
