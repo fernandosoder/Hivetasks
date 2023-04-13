@@ -110,7 +110,7 @@ var setPr = () => {
 
 
 
-            let link = (localStorage['cfg.hive_platform'] === undefined ? "http://hive.blog" : localStorage['cfg.hive_platform']) + "/@" + prList[prIndex].user + "/" + prList[prIndex].permlink;
+            let link = (localStorage['cfg.hive_platform'] === undefined ? "http://hive.blog" : localStorage['cfg.hive_platform']) + "/@" + prList[prIndex].author + "/" + prList[prIndex].permlink;
             if (a.href !== prList[prIndex].permlink)
                 a.href = link;
             a.classList.add("adLink");
