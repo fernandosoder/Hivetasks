@@ -122,6 +122,18 @@ var setPr = () => {
                 a.href = link;
             a.classList.add("adLink");
             panel.title = "Click Here to open our Sponsor's Hive Post:\n\n" + link;
+            document.querySelector(":root").style.setProperty("--adlink_progress","0%");
+            progressbar = () =>{
+                let pcnt = Number((document.querySelector(":root").style.getPropertyValue("--adlink_progress")).slice(0, -1));
+                pcnt += 5;
+                document.querySelector(":root").style.setProperty("--adlink_progress",pcnt+"%");
+                if(pcnt < 100){
+                    setTimeout(progressbar,500);
+                    return;
+                }
+                setTimeout(progressbar,500);
+            }
+            setTimeout(setPr,500);
         }
     });
 };

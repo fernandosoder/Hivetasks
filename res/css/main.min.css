@@ -32,7 +32,8 @@
     --border-radius-small:3px;
     --border-radius-medium:5px;
     --border-radius-big:6px;
-    --border-radius-panel:6px
+    --border-radius-panel:6px;
+    --adlink_progress: 0px;
 }
 html {
     font-family:sans-serif;
@@ -2047,6 +2048,7 @@ input.unitBox {
     top: calc(100% - 2px);
     left: 0;
     opacity: 0.2;
+    width: var(--adlink_progress);
 }
 .adMediumRect[data-type='text'] .adLink {
     height:240px
