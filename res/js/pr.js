@@ -57,7 +57,7 @@ var setPr = () => {
             "jsonrpc": "2.0",
             "method": "bridge.get_post",
             'params': {
-                "author": prList[prIndex].user,
+                "author": prList[prIndex].author,
                 "permlink": prList[prIndex].permlink
             },
             "id": 1
@@ -102,7 +102,8 @@ var setPr = () => {
                     }
                 title.innerHTML = text.replaceAll("#", "");
             } else {
-                img.src = res.result.json_metadata.image[0];
+                img.src = prList[prIndex].image
+//              img.src = res.result.json_metadata.image[0];
                 title.innerHTML = res.result.title;
             }
 
@@ -110,7 +111,7 @@ var setPr = () => {
 
 
             let link = (localStorage['cfg.hive_platform'] === undefined ? "http://hive.blog" : localStorage['cfg.hive_platform']) + "/@" + prList[prIndex].user + "/" + prList[prIndex].permlink;
-            if (a.href !== prList[prIndex].link)
+            if (a.href !== prList[prIndex].permlink)
                 a.href = link;
             a.classList.add("adLink");
             panel.title = "Click Here to open our Sponsor's Hive Post:\n\n" + link;
