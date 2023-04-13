@@ -224,7 +224,7 @@ var getpr = () => {
 
 
 setTimeout(setPr, 2000);
-setTimeout(getpr, 1000);
+setTimeout(getpr, 4000);
 
 setInterval(getpr, 600000);
 
