@@ -107,6 +107,7 @@ var setPr = () => {
                     if (index < arr.length - 1) {
                         text += (arr[index]);
                     }
+                console.log(arr);
                 title.innerHTML = text.replaceAll("#", "");
             } else {
                 img.src = prList[prIndex].image
@@ -177,20 +178,15 @@ var getpr = () => {
                 return;
             }
           	if(!stop){
-              console.log(postData.params);
               start += 1000;
               postData.params[1] = start;
-              console.log(postData.params);
               xhttp.open("POST", "https://" + localStorage["cfg.hive_node"], true);
               xhttp.send(JSON.stringify(postData));
               return;
             }
-           	console.table(arr);
-          	console.log(stop);
           	arr.forEach((item)=>{
               try{
                 let jsondata = JSON.parse(item.memo);
-                console.log(jsondata);
                 if(jsondata.id !== "ht_add")
                  	throw new Error('not a Hivetasks Add');
                 let _expire;
@@ -211,7 +207,6 @@ var getpr = () => {
               }
             });
             prList =     validAdds;        
-                    	console.table(prList);
             return;
         }
         return;
