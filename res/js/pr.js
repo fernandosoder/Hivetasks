@@ -99,16 +99,10 @@ var setPr = () => {
             panel.appendChild(a);
 
             if (res.result.json_metadata.app.split("/")[0] === "dBuzz") {
-                let arr = res.result.body.split("\n");
+                let arr = res.result.body.split("<br />");
                 container.classList.add("dbuzz");
                 img.src = "/res/img/dbuzz-icon-152.png";
-                let text = "";
-                for (let index in arr)
-                    if (index < arr.length - 1) {
-                        text += (arr[index]);
-                    }
-                console.log(arr);
-                title.innerHTML = text.replaceAll("#", "");
+                title.innerHTML = arr[0].replaceAll("#", "");
             } else {
                 img.src = prList[prIndex].image
 //              img.src = res.result.json_metadata.image[0];
