@@ -2473,3 +2473,9 @@ output{
 output[title]{
     cursor: help
 }
+
+#panelContentWitnessSchedule .last_block [title="0"]{
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+}
