@@ -21,9 +21,9 @@ kW.ct = function (a, b, c, d) {
     return e
 };
 kW.prototype.AJ = function (a) {
-    this.kx = Fs.Rf().css("width", "70%");
+    this.kx = Fs.Rf().css("width", "66%");
     this.ky = Fs.Rf().css({
-        width: "30%",
+        width: "34%",
         "padding-left": "20px"
     });
     var b = Fs.h1("row nowrap", "", "divSchedule", [this.kx, this.ky]);
