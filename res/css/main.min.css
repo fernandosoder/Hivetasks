@@ -221,7 +221,7 @@ video {
     outline:0;
     font-size:100%;
     vertical-align:baseline;
-    background:transparent
+    background:transparent;
 }
 body {
     line-height:1
@@ -2478,4 +2478,8 @@ output[title]{
     color: red;
     font-weight: bold;
     font-style: italic;
+}
+
+[data-op="producer_missed"] .opItemHeader{
+    background-color: rgba(255,0,0,0.5) !important;
 }
