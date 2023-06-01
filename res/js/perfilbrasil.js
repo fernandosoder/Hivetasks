@@ -150,9 +150,8 @@ t_pb.prototype.getDelegadores = function (tabela_callback) {
                 document.getElementById("p_wwarning").style.display = JSON.parse(jqXHR.responseText)[0].result[0].balance.split(" ")[0] < total ? "" : "none";
                 tabela_callback(dataTable);
             }
-            {
-                t_pb.prototype.hive_rate = JSON.parse(JSON.parse(jqXHR.responseText)[0].result[0].json_metadata).brl.hive;
-            }
+            t_pb.prototype.hive_rate = JSON.parse(JSON.parse(jqXHR.responseText)[0].result[0].json_metadata).brl.hive;
+
         }
 
     });
@@ -166,8 +165,9 @@ var stepSecond = () => {
         let split = (grandpa.attributes["data-pending"].value + "").split(".");
         item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
         item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
-        console.log(t_pb.hive_rate);
     });
+    console.log(t_pb);
+    console.log(t_pb.hive_rate);
     setTimeout(stepSecond, 1E3);
 };
 t_pb.prototype.step5min = (starter) => {
