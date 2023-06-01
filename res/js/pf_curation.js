@@ -189,19 +189,6 @@ t_pb_c.prototype.getPosts = function (tabela_callback) {
 
     });
 };
-var stepSecond = () => {
-    if (document.querySelectorAll("output.pfdelegators").length === 0)
-        return;
-    document.querySelectorAll("output.pfdelegators").forEach((item) => {
-        let grandpa = item.parentNode.parentNode;
-        grandpa.setAttribute("data-pending", parseFloat(grandpa.attributes["data-pending"].value) + parseFloat(grandpa.attributes["data-step"].value));
-        let split = (grandpa.attributes["data-pending"].value + "").split(".");
-        item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
-        item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
-        //console.log(grandpa);
-    });
-    setTimeout(stepSecond, 1E3);
-};
 t_pb_c.prototype.step5min = (starter) => {
     if (document.querySelectorAll("output.pfdelegators").length === 0 && starter === undefined)
         return;
