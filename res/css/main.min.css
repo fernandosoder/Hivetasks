@@ -2118,10 +2118,7 @@ sub{
     font-size: 9px !important;
     display: inline-block;
     text-align: left;
-}
-.pfdelegators sub{
-    font-size: 9px !important;
-    width: 100px;
+    font-style: italic;
 }
 
 #tableDelegadores tr th:nth-child(1),#tableDelegadores tr td:nth-child(1),#tableDelegadores tr th:nth-child(7),#tableDelegadores tr th:nth-child(11),#tableDelegadores tr td:nth-child(11),#tableDelegadores tr th:nth-child(12),#tableDelegadores tr td:nth-child(12){
@@ -2485,6 +2482,36 @@ output[title]{
     background-color: rgba(255,0,0,0.5) !important;
 }
 
+.pfdelegators {
+    text-align: center;
+}
+
+.pfdelegators,
 .pfdelegatorsbrl{
+    position: relative;
+    margin-right: 90px;
+    user-select:none;
+    cursor: default;
+}
+.pfdelegators sub,
+.pfdelegatorsbrl sub{
+    font-size: 9px !important;
+    position: absolute;
+    top: 100%;
+}
+
+:hover > .pfdelegators,
+:not(:hover)  > .pfdelegatorsbrl{
     display: none !important;
 }
+
+.pfdelegatorsbrl > span:before{
+    content: "R$ ";
+}
+
+.pfdelegators:after{
+    content: "HP";
+    position: absolute;
+    margin-left: 5px;
+}
+
