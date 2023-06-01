@@ -170,8 +170,7 @@ var stepSecond = () => {
         }
         {
             let brlValue = Number(grandpa.attributes["data-pending"].value) * t_pb.hive_rate;
-            
-            let split = (brlValue+ "").split(".");
+            let split = (brlValue + "").split(".");
             grandpa.querySelector(".pfdelegatorsbrl").firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
             grandpa.querySelector(".pfdelegatorsbrl").lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
         }
