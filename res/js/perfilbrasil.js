@@ -168,8 +168,8 @@ var stepSecond = () => {
         item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
         item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
         split = (brlValue + "").split(".");
-        grandpa.querySelector(".pfdelegatorsbrl").firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
-        grandpa.querySelector(".pfdelegatorsbrl").lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
+        grandpa.querySelector(".pfdelegatorsbrl span").innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
+        grandpa.querySelector(".pfdelegatorsbrl sub").innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
     });
     setTimeout(stepSecond, 1E3);
 };
