@@ -151,8 +151,7 @@ t_pb.prototype.getDelegadores = function (tabela_callback) {
                 tabela_callback(dataTable);
             }
             {
-                let res = JSON.parse(JSON.parse(jqXHR.responseText)[0].result[0].json_metadata).brl;
-                console.log(res);
+                t_pb.prototype.hive_rate = JSON.parse(JSON.parse(jqXHR.responseText)[0].result[0].json_metadata).brl.hive;
             }
         }
 
@@ -167,7 +166,7 @@ var stepSecond = () => {
         let split = (grandpa.attributes["data-pending"].value + "").split(".");
         item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
         item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
-        //console.log(grandpa);
+        console.log(t_pb.hive_rate);
     });
     setTimeout(stepSecond, 1E3);
 };
