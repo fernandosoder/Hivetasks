@@ -166,7 +166,7 @@ var stepSecond = () => {
         let split = (grandpa.attributes["data-pending"].value + "").split(".");
         item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
         item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
-        console.log(item.parentNode);
+        console.log(grandpa);
     });
     setTimeout(stepSecond, 1E3);
 };
