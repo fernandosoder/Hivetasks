@@ -1,5 +1,6 @@
 var t_pb = function (a) {
     //Fs.lY(a, "#tableDelegadores tr th:nth-child(1),#tableDelegadores tr td:nth-child(1),#tableDelegadores tr th:nth-child(7),#tableDelegadores tr th:nth-child(11),#tableDelegadores tr td:nth-child(11),#tableDelegadores tr th:nth-child(12),#tableDelegadores tr td:nth-child(12){text-align:center}#tableDelegadores tr th:nth-child(3),#tableDelegadores tr td:nth-child(3),#tableDelegadores tr th:nth-child(7),#tableDelegadores tr td:nth-child(7),#tableDelegadores tr th:nth-child(8),#tableDelegadores tr td:nth-child(8),#tableDelegadores tr th:nth-child(9),#tableDelegadores tr td:nth-child(9),#tableDelegadores tr th:nth-child(10),#tableDelegadores tr td:nth-child(10){text-align:right}#tableDelegadores tr[data-active='0'] .uName{text-decoration:line-through;color:#aaa}#tableDelegadores th,#tableDelegadores td{width:25%;text-align:right}#tableDelegadores tr th:nth-child(1),#tableDelegadores tr td:nth-child(1){min-width:195px;text-align:left}#tableDelegadores tr th:nth-child(4),#tableDelegadores tr td:nth-child(4){width:20%}");
+    t_pb.hive_rate = 0;
     let c = Fs.Rf("textBox", "perfilbrasil_info");
     let output = document.createElement("output");
     let p1 = document.createElement("p");
@@ -150,7 +151,7 @@ t_pb.prototype.getDelegadores = function (tabela_callback) {
                 document.getElementById("p_wwarning").style.display = JSON.parse(jqXHR.responseText)[0].result[0].balance.split(" ")[0] < total ? "" : "none";
                 tabela_callback(dataTable);
             }
-            t_pb.prototype.hive_rate = JSON.parse(JSON.parse(jqXHR.responseText)[0].result[0].json_metadata).brl.hive;
+            t_pb.hive_rate = JSON.parse(JSON.parse(jqXHR.responseText)[0].result[0].json_metadata).brl.hive;
 
         }
 
@@ -165,9 +166,8 @@ var stepSecond = () => {
         let split = (grandpa.attributes["data-pending"].value + "").split(".");
         item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
         item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
+        console.log(item.parentNode);
     });
-    console.log(t_pb);
-    console.log(t_pb.hive_rate);
     setTimeout(stepSecond, 1E3);
 };
 t_pb.prototype.step5min = (starter) => {
