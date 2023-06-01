@@ -163,18 +163,13 @@ var stepSecond = () => {
     document.querySelectorAll("output.pfdelegators").forEach((item) => {
         let grandpa = item.parentNode.parentNode;
         grandpa.setAttribute("data-pending", parseFloat(grandpa.attributes["data-pending"].value) + parseFloat(grandpa.attributes["data-step"].value));
-        {
-            let split = (grandpa.attributes["data-pending"].value + "").split(".");
-            item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
-            item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
-        }
-        {
-            let brlValue = Number(grandpa.attributes["data-pending"].value) * t_pb.hive_rate;
-            let split = (brlValue + "").split(".");
-            console.log(split);
-            grandpa.querySelector(".pfdelegatorsbrl").firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
-            grandpa.querySelector(".pfdelegatorsbrl").lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
-        }
+        let split = (grandpa.attributes["data-pending"].value + "").split(".");
+        let brlValue = Number(grandpa.attributes["data-pending"].value) * t_pb.hive_rate;
+        item.firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
+        item.lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
+        split = (brlValue + "").split(".");
+        grandpa.querySelector(".pfdelegatorsbrl").firstChild.innerHTML = split.length > 1 ? split[0] + "." + split[1].substr(0, 3) : split[0].substr(0, 3);
+        grandpa.querySelector(".pfdelegatorsbrl").lastChild.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
     });
     setTimeout(stepSecond, 1E3);
 };
