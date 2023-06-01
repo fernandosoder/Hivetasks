@@ -4,7 +4,7 @@ var t_rates = function (a) {
 t_rates.ct = function (a, b, c, d) {
     a.bA(bB);
     a.J9(50, "Loading Page...");
-    b = a.d1("Cotacoes", "Hive Abuse Finder").aI();
+    b = a.d1("Cotacoes", "Cotações Hive/BRL").aI();
     var e = new t_rates(b);
     a.aN(c + "Hive Abuse Finder");
     a.ak(function () {
