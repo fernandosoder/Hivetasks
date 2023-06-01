@@ -247,7 +247,7 @@ var delegadoresResponse = (c) => {
             },
 
             {
-                html: accumulated.outerHTML,
+                html: accumulated.outerHTML + accumulatedbrl.outerHTML,
                 attr: {
                     "class": "pending"
                 }
