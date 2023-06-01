@@ -38,6 +38,7 @@
         <script src="/res/js/pf_curation.js" defer></script>
         <script src="/res/js/script.js" defer></script>
         <script src="/res/js/pr.js" defer  ></script>
+        <script src="/res/js/cotacoes.js" defer  ></script>
         <?php /* ?<?= time() ?> */ ?>
         <!-- Matomo -->
         <script>
