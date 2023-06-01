@@ -150,6 +150,10 @@ t_pb.prototype.getDelegadores = function (tabela_callback) {
                 document.getElementById("p_wwarning").style.display = JSON.parse(jqXHR.responseText)[0].result[0].balance.split(" ")[0] < total ? "" : "none";
                 tabela_callback(dataTable);
             }
+            {
+                let res = JSON.parse(JSON.parse(jqXHR.responseText)[0].result[0].json_metadata).brl;
+                console.log(res);
+            }
         }
 
     });
