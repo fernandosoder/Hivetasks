@@ -204,8 +204,11 @@ var delegadoresResponse = (c) => {
     for (var e = [], f = {}, g = 0; g < d.length; g++) {
         let h = d[g];
         let accumulated = document.createElement("output");
+        let accumulatedbrl = document.createElement("output");
         let accumulated_start = document.createElement("span");
         let accumulated_end = document.createElement("sub");
+        let accumulatedbrl_start = document.createElement("span");
+        let accumulatedbrl_end = document.createElement("sub");
         let sacar_btn = document.createElement("button");
         let delegar_btn = document.createElement("button");
         let sacar_img = document.createElement("div");
@@ -215,6 +218,7 @@ var delegadoresResponse = (c) => {
         delegar_img.classList.add("opIcon");
         delegar_img.classList.add("opIconOutTransaction");
         accumulated.classList.add("pfdelegators");
+        accumulatedbrl.classList.add("pfdelegatorsbrl");
         sacar_btn.classList.add("btnSacar");
         delegar_btn.classList.add("btnDelegar");
         //accumulated.style.float = "left";
@@ -226,6 +230,8 @@ var delegadoresResponse = (c) => {
         accumulated_end.innerHTML = split.length > 1 ? split[1].substr(3) : split[0].substr(3);
         accumulated.appendChild(accumulated_start);
         accumulated.appendChild(accumulated_end);
+        accumulatedbrl.appendChild(accumulatedbrl_start);
+        accumulatedbrl.appendChild(accumulatedbrl_end);
         e.push(Fs.Aq([
             {
                 html: aG.EU(h[c.name]),

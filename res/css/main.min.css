@@ -2484,3 +2484,7 @@ output[title]{
 [data-op="producer_missed"] .opItemHeader{
     background-color: rgba(255,0,0,0.5) !important;
 }
+
+.pfdelegatorsbrl{
+    display: none !important;
+}
