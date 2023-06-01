@@ -2346,7 +2346,8 @@ output{
     content: "by @";
 }
 
-[href="/perfilbrasil-curation"]{
+[href="/perfilbrasil-curation"],
+[href="/cotacoes"]{
     display: none !important;
 }
 #tableCuration .situation img{
