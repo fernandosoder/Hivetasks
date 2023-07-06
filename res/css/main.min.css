@@ -2127,7 +2127,8 @@ sub{
 #tableDelegadores tr th:nth-child(3),#tableDelegadores tr td:nth-child(3),#tableDelegadores tr th:nth-child(7),#tableDelegadores tr td:nth-child(7),#tableDelegadores tr th:nth-child(8),#tableDelegadores tr td:nth-child(8),#tableDelegadores tr th:nth-child(9),#tableDelegadores tr td:nth-child(9),#tableDelegadores tr th:nth-child(10),#tableDelegadores tr td:nth-child(10){
     text-align:right
 }
-#tableDelegadores tr[data-active='0'] .uName{
+#tableDelegadores tr[data-active='0'] .uName,
+#tableWitnesses tr[data-active='0'] .uName{
     text-decoration:line-through;
     color:#aaa
 }
@@ -2166,6 +2167,7 @@ sub{
 }
 
 #tableDelegadores tr[data-active='0'] .uName,
+#tableWitness tr[data-active='0'] .uName,
 #tableWitnessLine tr[data-active='0'] .uName{
     text-decoration:line-through;
     color:#aaa ;
